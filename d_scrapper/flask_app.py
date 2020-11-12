@@ -52,5 +52,9 @@ def home():
         return render_template("index.html", blogs=blogs, order_by=order_by)
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
+@app.route("/tile")
+def tile():
+    return render_template("tile.html")
+
+
+app.run(host="0.0.0.0")

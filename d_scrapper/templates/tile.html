@@ -49,11 +49,6 @@
                 <li>
                   <strong><a href="/tile">TILE</a></strong>
                 </li>
-                <li><a href="/?order_by=ohouse">Ohouse</a></li>
-                <li><a href="/?order_by=inhouse">Inhouse</a></li>
-                <li><a href="/?order_by=maison">Maison</a></li>
-                <li><a href="/?order_by=livingsense">Livingsense</a></li>
-                <li><a href="/?order_by=happydesign">Happydesign</a></li>
               </ul>
             </div>
           </div>
@@ -77,53 +72,6 @@
               </p>
             </div>
           </header>
-          <div class="background-white full-width">
-            {% for blog in blogs %}
-            <div class="s-12 m-6 l-five">
-              <a
-                class="image-with-hover-overlay"
-                href="{{blog.link}}"
-                title="Portfolio Image"
-              >
-                <div
-                  class="image-hover-overlay"
-                  style="background-color: rgba(255, 255, 255, 0.5)"
-                >
-                  <div
-                    class="image-hover-overlay-content text-center padding-2x"
-                  ></div>
-                </div>
-                <div class="jb-wrap">
-                  <div class="jb-image">
-                    <img
-                      class="full-img2"
-                      src="{{blog.img}}"
-                      alt=""
-                      style="width: 400px; height: 300px"
-                    />
-                  </div>
-                  <div
-                    class="jb-text"
-                    style="
-                      background-color: rgba(255, 255, 255, 0.6);
-                      text-align: center;
-                      bottom: 0%;
-                      position: absolute;
-                      width: 100%;
-                    "
-                  >
-                    <p
-                      class="txt text-dark"
-                      style="font-size: 15px; font-family: georgia"
-                    >
-                      {{-blog.title-}}
-                    </p>
-                  </div>
-                </div>
-              </a>
-            </div>
-            {% endfor %}
-          </div>
         </article>
       </main>
 
