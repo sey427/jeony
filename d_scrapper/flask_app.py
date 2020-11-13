@@ -1,5 +1,6 @@
 from flask import Flask, render_template, request
-from scrapper import get_site
+from idea_scrapper import get_site
+from light_scrapper import get_site as light_get_site
 import random
 
 app = Flask(__name__)
@@ -8,6 +9,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
     order_by = request.args.get("order_by")
+    page_name = "INTERIOR"
     if order_by:
         if order_by == "happydesign":
             blogs = get_site("happydesign")
@@ -21,7 +23,9 @@ def home():
             blogs = get_site("ohouse")
         else:
             blogs = []
-        return render_template("index.html", blogs=blogs, order_by=order_by)
+        return render_template(
+            "index.html", blogs=blogs, order_by=order_by, page=page_name
+        )
     else:
         sites = [
             "betterhomes",
@@ -33,6 +37,7 @@ def home():
             "homesandgardens",
         ]
         order_by = random.choice(sites)
+        page_name = "INTERIOR"
         if order_by == "betterhomes":
             blogs = get_site("betterhomes")
         elif order_by == "interiordesign":
@@ -49,12 +54,29 @@ def home():
             blogs = get_site("homedesigning")
         else:
             blogs = []
-        return render_template("index.html", blogs=blogs, order_by=order_by)
+        return render_template(
+            "index.html", blogs=blogs, order_by=order_by, page=page_name
+        )
 
 
-@app.route("/tile")
+@app.route("/light")
 def tile():
-    return render_template("tile.html")
+    order_by = request.args.get("order_by")
+    page_name = "LIGHT"
+    if order_by:
+        if order_by == "gonggan":
+            blogs = light_get_site("gonggan")
+        else:
+            blogs = []
+        return render_template(
+            "light.html", blogs=blogs, order_by=order_by, page=page_name
+        )
+    else:
+        order_by = "nothing"
+        blogs = []
+        return render_template(
+            "light.html", blogs=blogs, order_by=order_by, page=page_name
+        )
 
 
 app.run(host="0.0.0.0")

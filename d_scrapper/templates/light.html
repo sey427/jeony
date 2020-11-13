@@ -32,7 +32,7 @@
           class="background-transparent background-transparent-hightlight full-width sticky"
         >
           <div class="s-12 l-2">
-            <a href="/" class="logo">
+            <a href="/light" class="logo">
               <!-- Logo version before sticky nav -->
               <img class="logo-before" src="static/img/logo.png" alt="" />
               <!-- Logo version after sticky nav -->
@@ -43,13 +43,14 @@
             <div class="top-nav right">
               <p class="nav-text"></p>
               <ul class="right chevron">
-                <li>
-                  <strong><a href="/">INTERIOR</a></strong>
-                </li>
-                <li>
-                  <strong><a href="/tile">TILE</a></strong>
-                </li>
+                <li><a href="/light?order_by=gonggan">Gonggan</a></li>
+                <li><a href="/">blabla</a></li>
+                <li><a href="/">blabla</a></li>
+                <li><a href="/">blabla</a></li>
               </ul>
+            </div>
+            <div class="top-nav">
+              <strong><a href="/">INTERIOR</a></strong>
             </div>
           </div>
         </nav>
@@ -61,17 +62,62 @@
         <article>
           <header class="section background-white">
             <div class="line text-center">
+              <p class="margin-bottom-0 text-size-16 text-dark">{{page}}</p>
+              <br />
               <h1
                 class="text-dark text-s-size-30 text-m-size-40 text-l-size-headline text-thin text-line-height-1"
               >
                 {{order_by}}
               </h1>
-              <p class="margin-bottom-0 text-size-16 text-dark">
-                <br />
-                hi jeony pang!
-              </p>
             </div>
           </header>
+          <div class="background-white full-width">
+            {% for blog in blogs %}
+            <div class="s-12 m-6 l-five">
+              <a
+                class="image-with-hover-overlay"
+                href="{{blog.link}}"
+                title="Portfolio Image"
+              >
+                <div
+                  class="image-hover-overlay"
+                  style="background-color: rgba(255, 255, 255, 0.5)"
+                >
+                  <div
+                    class="image-hover-overlay-content text-center padding-2x"
+                  ></div>
+                </div>
+                <div class="jb-wrap">
+                  <div class="jb-image">
+                    <img
+                      class="full-img2"
+                      src="{{blog.img}}"
+                      alt=""
+                      style="width: 400px; height: 300px"
+                    />
+                  </div>
+                  <div
+                    class="jb-text"
+                    style="
+                      background-color: rgba(38, 50, 56);
+                      text-align: center;
+                      bottom: 0%;
+                      position: absolute;
+                      width: 100%;
+                    "
+                  >
+                    <p
+                      class="txt text-white"
+                      style="font-size: 25px; font-family: georgia"
+                    >
+                      {{-blog.price-}}
+                    </p>
+                  </div>
+                </div>
+              </a>
+            </div>
+            {% endfor %}
+          </div>
         </article>
       </main>
 
