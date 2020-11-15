@@ -1,6 +1,5 @@
 from flask import Flask, render_template, request
 from idea_scrapper import get_site
-from light_scrapper import get_site as light_get_site
 import random
 
 app = Flask(__name__)
@@ -56,26 +55,6 @@ def home():
             blogs = []
         return render_template(
             "index.html", blogs=blogs, order_by=order_by, page=page_name
-        )
-
-
-@app.route("/light")
-def tile():
-    order_by = request.args.get("order_by")
-    page_name = "LIGHT"
-    if order_by:
-        if order_by == "gonggan":
-            blogs = light_get_site("gonggan")
-        else:
-            blogs = []
-        return render_template(
-            "light.html", blogs=blogs, order_by=order_by, page=page_name
-        )
-    else:
-        order_by = "nothing"
-        blogs = []
-        return render_template(
-            "light.html", blogs=blogs, order_by=order_by, page=page_name
         )
 
 
