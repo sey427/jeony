@@ -3043,6 +3043,8 @@ form.customform select {
   border: 1px solid #282828;
 }
 
+/* calendar */
+
 /* Image blocks */
 .image-hover-zoom img {
   transition: all 0.5s cubic-bezier(0.645, 0.045, 0.355, 1) 0s;
