@@ -165,16 +165,6 @@ def extract_items(site, url, last_page=0):
             img = item.find("img")["src"]
             home_item = {"title": title, "img": img, "link": link}
             homes.append(home_item)
-    elif site == "elledecor":
-        items = soup.find("div", {"class": "feed feed-grid"}).find_all(
-            "div", {"class": "simple-item"}
-        )
-        for item in items:
-            link = "https://www.elledecor.com" + item.find("a")["href"]
-            title = item.find("div", {"class": "simple-item-title"}).text.strip()
-            img = item.find("img")["data-src"]
-            home_item = {"title": title, "img": img, "link": link}
-            homes.append(home_item)
     elif site == "homesandgardens":
         items = soup.find("ul", {"class": "listing__list"}).find_all(
             "li", {"class": "listing__item listing__item--alternate"}
@@ -224,9 +214,6 @@ def get_site(site):
         homes = extract_items(site, url, last_page)
     elif site == "trendir":
         url = "https://www.trendir.com/interiors/"
-        homes = extract_items(site, url)
-    elif site == "elledecor":
-        url = "https://www.elledecor.com/design-decorate/room-ideas/"
         homes = extract_items(site, url)
     elif site == "homesandgardens":
         url = "https://www.homesandgardens.com/interior-design"

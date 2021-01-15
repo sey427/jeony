@@ -32,7 +32,6 @@ def home():
             "idealhome",
             "homedesigning",
             "trendir",
-            "elledecor",
             "homesandgardens",
         ]
         order_by = random.choice(sites)
@@ -45,8 +44,6 @@ def home():
             blogs = get_site("idealhome")
         elif order_by == "trendir":
             blogs = get_site("trendir")
-        elif order_by == "elledecor":
-            blogs = get_site("elledecor")
         elif order_by == "homesandgardens":
             blogs = get_site("homesandgardens")
         elif order_by == "homedesigning":
