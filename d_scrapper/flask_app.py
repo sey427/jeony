@@ -57,7 +57,8 @@ def home():
 
 @app.route("/calendar")
 def calendar():
-    return render_template("calendar.html")
+    # return render_template("calendar.html")
+    return render_template("test.html")
 
 
 app.run(host="0.0.0.0")
