@@ -9,7 +9,7 @@ function getTime() {
     minutes < 10 ? `0${minutes}` : minutes
   }:${seconds < 10 ? `0${seconds}` : seconds}`;
 
-  clock.innerHTML = time;
+  clock.innerText = time;
   return;
 }
 function init() {
