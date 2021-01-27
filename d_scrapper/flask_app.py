@@ -55,10 +55,11 @@ def home():
         )
 
 
-@app.route("/calendar")
+@app.route("/just")
 def calendar():
-    # return render_template("calendar.html")
-    return render_template("test.html")
+    cnt = request.args.get("cnt")
+    
+        return render_template("images.html",cnt=cnt)
 
 
 app.run(host="0.0.0.0")

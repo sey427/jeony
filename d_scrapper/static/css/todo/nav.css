@@ -1,0 +1,11 @@
+.nav {
+  position: fixed;
+  bottom: 0px;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 2em;
+}
+.nav__list {
+  display: flex;
+  justify-content: space-between;
+}
