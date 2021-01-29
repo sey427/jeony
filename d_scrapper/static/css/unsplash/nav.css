@@ -2,10 +2,13 @@
   position: fixed;
   bottom: 0px;
   width: 100%;
+  padding: 10px;
   box-sizing: border-box;
-  font-size: 2em;
 }
 .nav__list {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
+}
+.nav__btn {
+  margin-left: 20px;
 }

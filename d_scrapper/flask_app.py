@@ -55,11 +55,9 @@ def home():
         )
 
 
-@app.route("/just")
+@app.route("/unsplash")
 def calendar():
-    cnt = request.args.get("cnt")
-    
-        return render_template("images.html",cnt=cnt)
+    return render_template("unsplash.html")
 
 
 app.run(host="0.0.0.0")
