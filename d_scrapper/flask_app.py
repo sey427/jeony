@@ -59,5 +59,9 @@ def home():
 def calendar():
     return render_template("unsplash.html")
 
+@app.route("/finance")
+def finance():
+    return render_template("finance.html")
 
+    
 app.run(host="0.0.0.0")
